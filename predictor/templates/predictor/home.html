@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Cancer Detection System</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #2E2E2E; /* Charcoal Black */
+            color: white;
+        }
+        .navbar {
+            background-color: #BD2E8D; /* Pink Theme */
+        }
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        .btn-custom {
+            background-color: #BD2E8D;
+            color: white;
+            border: none;
+        }
+        .btn-custom:hover {
+            background-color: #a62676;
+        }
+        .hero-section {
+            padding: 80px 0;
+            text-align: center;
+        }
+        .content-section {
+            padding: 40px 0;
+        }
+        .cta-section {
+            padding: 60px 0;
+            background-color: #BD2E8D;
+            text-align: center;
+        }
+        .cta-section h3 {
+            color: white;
+        }
+        #mainimg {
+            margin-top: 40px;
+            /* ration aspect */
+            object-fit: cover;
+            width: 100%;
+            height: 500px;
+
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Cancer Detection AI</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#how-it-works">How It Works</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'predict_image' %}">Try Now</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" style="background-color: #1F1F1F;">
+        <div class="container">
+            <h1>Automated Cancer Detection System</h1>
+            <p class="lead">Harnessing Deep Learning for Early Cancer Detection Using Microscopic Image Analysis</p>
+            <!-- Hero Image Placeholder -->
+            <img src="https://www.hhmglobal.com/wp-content/uploads/2023/01/Breast-Cancer.jpg" id="mainimg" class="img-fluid mt-4" alt="Cancer Detection AI" style="border-radius: 10px; box-shadow: 0 0 20px rgba(238, 137, 233, 0.4);"
+            >
+        </div>
+    </section>
+
+    <!-- Content Section 1: Revolutionizing Cancer Detection with Deep Learning -->
+    <section class="content-section" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>Revolutionizing Cancer Detection with Deep Learning</h2>
+                    <p>Our state-of-the-art cancer detection tool leverages Deep Convolutional Neural Networks (CNNs) to analyze microscopic images for early signs of cancer. The system is designed to assist medical professionals with faster and more accurate diagnostics, offering life-saving early detection through advanced AI-powered analysis.</p>
+                </div>
+                <div class="col-md-6">
+                    <!-- Image Placeholder -->
+                    <img src="https://propakistani.pk/wp-content/uploads/2023/01/AI-Doctor.jpg.avif" class="img-fluid" alt="AI Cancer Detection"
+                    style="object-fit: cover; width: 100%; height: 300px;" 
+                    >
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Section 2: How Deep Learning Enhances Diagnostic Accuracy -->
+    <section class="content-section" id="how-it-works">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <!-- Image Placeholder -->
+                    <img src="https://www.researchgate.net/publication/338344242/figure/fig1/AS:941756644331563@1601543689784/Lung-Cancer-Detection-using-Proposed-FPSOCNN.png" class="img-fluid" alt="Deep Learning Model"
+                    style="object-fit: fill; width: 100%; height: 300px;"
+                    >
+                </div>
+                <div class="col-md-6">
+                    <h2>How Deep Learning Enhances Diagnostic Accuracy</h2>
+                    <p>We use a meticulously trained deep learning model that processes thousands of microscopic images to detect abnormal cell patterns. This allows our system to identify potential cancerous cells at an early stage, providing healthcare providers with the tools they need to make critical decisions swiftly and with confidence.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Section 3: A Simple and Efficient Way to Predict -->
+    <section class="content-section" id="predictor">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>A Simple and Efficient Way to Detect</h2>
+                    <p>Our system makes it easy for users to upload microscopic images and receive AI-powered detections within seconds. Whether you're a medical professional or a researcher, our system is here to assist you in the fight against cancer.</p>
+                </div>
+                <div class="col-md-6">
+                    <!-- Image Placeholder -->
+                    <img src="https://ars.els-cdn.com/content/image/1-s2.0-S1876034120305633-gr2.jpg" class="img-fluid" alt="Predict Cancer AI">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h3>Try Our Cancer Detection Tool Now</h3>
+            <a href="{% url 'predict_image' %}" class="btn btn-lg btn-custom mt-3">Try Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center py-4" style="background-color: #1F1F1F;">
+        <p>&copy; 2024 Cancer Detection AI. All rights reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
